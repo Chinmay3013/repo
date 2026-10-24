@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Harry Potter & Draco Malfoy</title>
+    <title>Ben 10 - Omnitrix</title>
 
     <style>
         * {
@@ -14,219 +14,420 @@
         }
 
         body {
-            font-family: Georgia, serif;
-            background: #0b0b16;
-            color: #eee;
+            font-family: Arial, sans-serif;
+            background: #050505;
+            color: white;
         }
 
-        header {
-            height: 100vh;
-            background:
-                linear-gradient(rgba(5,5,15,0.65), rgba(5,5,15,0.9)),
-                url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80");
+        /* NAVBAR */
 
-            background-size: cover;
-            background-position: center;
-
+        nav {
+            background: #111;
+            padding: 20px 8%;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 2px solid #39ff14;
         }
+
+        nav h1 {
+            color: #39ff14;
+            font-size: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: #39ff14;
+        }
+
+        /* HERO */
 
         .hero {
-            max-width: 800px;
-            padding: 30px;
-        }
+            min-height: 90vh;
 
-        .hero h1 {
-            font-size: 70px;
-            color: #d4af37;
-            text-shadow: 0 0 20px black;
-            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            background:
+                radial-gradient(circle, #143d14, #050505 60%);
         }
 
         .hero h2 {
-            font-size: 30px;
-            color: #ddd;
-            margin-bottom: 25px;
+            font-size: 70px;
+            color: #39ff14;
+            text-shadow: 0 0 20px #39ff14;
         }
 
         .hero p {
-            font-size: 18px;
-            line-height: 1.8;
+            font-size: 22px;
             color: #ccc;
+            margin-top: 15px;
         }
 
-        .btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 14px 30px;
-            background: #d4af37;
-            color: #111;
-            text-decoration: none;
+        /* OMNITRIX */
+
+        .omnitrix {
+            width: 220px;
+            height: 220px;
+
+            margin: 40px;
+
+            border-radius: 50%;
+
+            background: #111;
+
+            border: 15px solid #333;
+
+            box-shadow:
+                0 0 20px #39ff14,
+                0 0 60px #39ff14;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .omnitrix-core {
+            width: 120px;
+            height: 120px;
+
+            border-radius: 50%;
+
+            background: #39ff14;
+
+            border: 20px solid #222;
+
+            box-shadow: 0 0 30px #39ff14;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .symbol {
+            width: 45px;
+            height: 45px;
+
+            background: #111;
+
+            clip-path: polygon(
+                50% 0%,
+                100% 25%,
+                85% 100%,
+                15% 100%,
+                0% 25%
+            );
+        }
+
+        /* BUTTON */
+
+        button {
+            padding: 15px 35px;
+
+            border: none;
             border-radius: 5px;
+
+            background: #39ff14;
+            color: black;
+
+            font-size: 18px;
             font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow: 0 0 15px #39ff14;
         }
 
-        .btn:hover {
+        button:hover {
             background: white;
+            box-shadow: 0 0 30px white;
         }
+
+        /* ALIENS */
 
         section {
-            padding: 80px 10%;
+            padding: 80px 8%;
         }
 
         .title {
             text-align: center;
-            font-size: 40px;
-            color: #d4af37;
+
+            color: #39ff14;
+
+            font-size: 45px;
+
             margin-bottom: 50px;
         }
 
-        .characters {
+        .aliens {
             display: flex;
             justify-content: center;
-            gap: 40px;
+
+            gap: 25px;
+
             flex-wrap: wrap;
         }
 
-        .card {
-            width: 300px;
-            background: #171724;
+        .alien-card {
+            width: 220px;
+
+            background: #151515;
+
             border: 1px solid #333;
+
             border-radius: 12px;
-            overflow: hidden;
+
+            padding: 30px;
+
+            text-align: center;
+
             transition: 0.3s;
         }
 
-        .card:hover {
+        .alien-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 0 25px rgba(212,175,55,0.3);
+
+            border-color: #39ff14;
+
+            box-shadow: 0 0 25px #39ff14;
         }
 
-        .card img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
+        .alien-icon {
+            width: 100px;
+            height: 100px;
+
+            margin: auto;
+            margin-bottom: 20px;
+
+            border-radius: 50%;
+
+            background: #222;
+
+            border: 5px solid #39ff14;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 40px;
         }
 
-        .card-content {
-            padding: 25px;
-        }
+        .alien-card h3 {
+            color: #39ff14;
 
-        .card h3 {
-            color: #d4af37;
-            font-size: 25px;
+            font-size: 24px;
+
             margin-bottom: 10px;
         }
 
-        .card p {
-            color: #bbb;
-            line-height: 1.6;
+        .alien-card p {
+            color: #aaa;
+
+            line-height: 1.5;
         }
 
-        .story {
+        /* ABOUT */
+
+        .about {
             max-width: 900px;
+
             margin: auto;
+
             text-align: center;
-            line-height: 2;
+
+            line-height: 1.8;
+
             color: #ccc;
+
             font-size: 18px;
         }
 
-        .quote {
-            margin-top: 50px;
-            padding: 40px;
-            border-left: 4px solid #d4af37;
-            background: #151522;
-            font-style: italic;
-            color: #ddd;
-        }
+        /* FOOTER */
 
         footer {
-            text-align: center;
             padding: 30px;
-            background: #06060c;
+
+            text-align: center;
+
+            background: #111;
+
             color: #777;
+        }
+
+        footer span {
+            color: #39ff14;
         }
     </style>
 </head>
 
+
 <body>
 
-    <!-- HERO SECTION -->
 
-    <header>
+    <!-- NAVIGATION -->
 
-        <div class="hero">
+    <nav>
 
-            <h1>Harry & Draco</h1>
+        <h1>BEN 10</h1>
 
-            <h2>A Different Kind of Magic</h2>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#aliens">Aliens</a>
+            <a href="#about">About</a>
+        </div>
 
-            <p>
-                In a world where the story could have been different,
-                Draco Malfoy becomes the female lead whose destiny
-                becomes intertwined with Harry Potter.
-            </p>
+    </nav>
 
-            <a href="#story" class="btn">
-                Enter the Story
-            </a>
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <h2>BEN 10</h2>
+
+        <p>
+            It's Hero Time!
+        </p>
+
+
+        <!-- OMNITRIX -->
+
+        <div class="omnitrix">
+
+            <div class="omnitrix-core">
+
+                <div class="symbol"></div>
+
+            </div>
 
         </div>
 
-    </header>
+
+        <button onclick="transform()">
+            ACTIVATE OMNITRIX
+        </button>
+
+        <p id="result"></p>
+
+    </section>
 
 
-    <!-- CHARACTERS -->
+    <!-- ALIENS -->
 
-    <section>
+    <section id="aliens">
 
-        <h2 class="title">The Characters</h2>
+        <h2 class="title">
+            OMNITRIX ALIENS
+        </h2>
 
-        <div class="characters">
 
-            <div class="card">
+        <div class="aliens">
 
-                <img
-                    src="https://images.unsplash.com/photo-1520975958225-4f61d2c7a9c6?auto=format&fit=crop&w=800&q=80"
-                    alt="Harry Potter inspired character"
-                >
 
-                <div class="card-content">
+            <div class="alien-card">
 
-                    <h3>Harry Potter</h3>
-
-                    <p>
-                        The boy who survived. Brave, stubborn and
-                        determined to protect the people he cares about.
-                    </p>
-
+                <div class="alien-icon">
+                    🔥
                 </div>
+
+                <h3>Heatblast</h3>
+
+                <p>
+                    A powerful fire-based alien capable
+                    of throwing flames and flying.
+                </p>
 
             </div>
 
 
-            <div class="card">
+            <div class="alien-card">
 
-                <img
-                    src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80"
-                    alt="Female Draco Malfoy inspired character"
-                >
-
-                <div class="card-content">
-
-                    <h3>Draco Malfoy</h3>
-
-                    <p>
-                        Reimagined as the female lead — intelligent,
-                        proud, sharp-tongued and far more complicated
-                        than Harry expects.
-                    </p>
-
+                <div class="alien-icon">
+                    👽
                 </div>
+
+                <h3>Four Arms</h3>
+
+                <p>
+                    Super strength, incredible durability
+                    and four powerful arms.
+                </p>
+
+            </div>
+
+
+            <div class="alien-card">
+
+                <div class="alien-icon">
+                    ⚡
+                </div>
+
+                <h3>XLR8</h3>
+
+                <p>
+                    A super-fast alien capable of
+                    moving at incredible speeds.
+                </p>
+
+            </div>
+
+
+            <div class="alien-card">
+
+                <div class="alien-icon">
+                    👻
+                </div>
+
+                <h3>Ghostfreak</h3>
+
+                <p>
+                    Can become invisible, possess objects
+                    and pass through solid surfaces.
+                </p>
+
+            </div>
+
+
+            <div class="alien-card">
+
+                <div class="alien-icon">
+                    🦖
+                </div>
+
+                <h3>Wildmutt</h3>
+
+                <p>
+                    Enhanced senses, agility and
+                    incredible tracking abilities.
+                </p>
+
+            </div>
+
+
+            <div class="alien-card">
+
+                <div class="alien-icon">
+                    💎
+                </div>
+
+                <h3>Diamondhead</h3>
+
+                <p>
+                    Creates powerful crystal weapons
+                    and has incredible durability.
+                </p>
 
             </div>
 
@@ -235,40 +436,30 @@
     </section>
 
 
-    <!-- STORY -->
+    <!-- ABOUT -->
 
-    <section id="story">
+    <section id="about">
 
-        <h2 class="title">The Story</h2>
+        <h2 class="title">
+            ABOUT BEN
+        </h2>
 
-        <div class="story">
+        <div class="about">
 
             <p>
-                Hogwarts had always been full of secrets.
-                But Harry Potter never expected one of them to be
-                Draco Malfoy.
+                Ben Tennyson is a young hero who discovers
+                the Omnitrix, a mysterious alien device that
+                allows him to transform into different alien
+                species.
             </p>
 
             <br>
 
             <p>
-                She was everything Harry disliked — arrogant,
-                competitive and seemingly determined to make
-                his life miserable.
+                With great power comes great responsibility.
+                Ben uses the Omnitrix to protect Earth and
+                fight dangerous villains across the universe.
             </p>
-
-            <br>
-
-            <p>
-                Yet behind the perfect Slytherin smile was someone
-                fighting a battle Harry knew nothing about.
-            </p>
-
-            <div class="quote">
-                "Maybe the most dangerous magic isn't found in a wand.
-                Maybe it's the magic that happens when two enemies
-                finally understand each other."
-            </div>
 
         </div>
 
@@ -280,10 +471,36 @@
     <footer>
 
         <p>
-            A fan-made alternate-universe concept.
+            <span>Ben 10</span> Fan Website
         </p>
 
     </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        const aliens = [
+            "Heatblast",
+            "Four Arms",
+            "XLR8",
+            "Diamondhead",
+            "Wildmutt",
+            "Ghostfreak"
+        ];
+
+        function transform() {
+
+            let randomAlien =
+                aliens[Math.floor(Math.random() * aliens.length)];
+
+            document.getElementById("result").innerHTML =
+                "TRANSFORMATION: " + randomAlien + "!";
+        }
+
+    </script>
+
 
 </body>
 </html>
